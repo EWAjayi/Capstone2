@@ -9,18 +9,53 @@ window.onload = () => {
     addParkTypesToDropdown();
 };
 
-//TODO create function for display after onclick
-// Adding OnClick action
-function searchLocation() {
-    let message = `${nationalParksArray.length} National Parks to visit</h1><br><br>`;
-    message += nationalParksArray.map(parkTemplate).join("");
-    document.getElementById("myParks").innerHTML = message;
-    return `
-    <select id="parkType">
+//TODO create first layer: Location dropdown and display onchange
+function addLocationsToDropdown() {
+    // Get the dropdown element by its ID
+    
+        // Use forEach to iterate over the array
+        locationsArray.forEach(function (location) {
+            // Create a new option element
+            let option = document.createElement("option");
+            
+            // Set the value and text content for the new option
+            option.value = location;
+            option.textContent = location;
+            
+            // Add an event listener to the option
+            //*Add event listener to the dropdown options
+            option.addEventListener("click", function searchLocation() {
+                // Call a function to display information based on the selected option
+                displayLocationInfo(location);
+            });
+            
+            // Add the new option to the dropdown
+            states.appendChild(option);
+        });
+    }
+    
+    //*Display information based on the state chosen
+    function displayLocationInfo(selectedLocation) {
+        
+        // Filter the nationalParksArray based on the selectedLocation
+        let filteredParks = nationalParksArray.filter(function (park) {
+            return park.State === selectedLocation;
+        });
+        
+        // Display the filtered information
+        let message = `${filteredParks.length} National Parks in ${selectedLocation}</h1><br><br>`;
+        message += filteredParks.map(parkTemplate).join("");
+        document.getElementById("myParks").innerHTML = message;
+    }
 
-    </select>
-    `
-}
+//TODO create function for display after onclick
+    // Adding OnClick action
+    function searchLocation() {
+        let message = `${nationalParksArray.length} National Parks to visit</h1><br><br>`;
+        message += nationalParksArray.map(parkTemplate).join("");
+        document.getElementById("myParks").innerHTML = message;
+    }
+
     //* Template for display output
     function parkTemplate(park) {
         return `
@@ -33,68 +68,46 @@ function searchLocation() {
                 </div>
             </div>`;
     }
-
-//TODO create first layer: Location dropdown and display onchange
-    function addLocationsToDropdown() {
-        // Get the dropdown element by its ID
-
-        // Use forEach to iterate over the array
-        locationsArray.forEach(function (location) {
-            // Create a new option element
-            let option = document.createElement("option");
-
-            // Set the value and text content for the new option
-            option.value = location;
-            option.textContent = location;
-            
-            // Add the new option to the dropdown
-            states.appendChild(option);
-        });
-        
-        //*Display information based on the state chosen
-
-        //*Add event listener to change display with chosen state
-    }
-
-//TODO create second layer: filter for park type of the displayed information onchange
+    
+    //TODO create second layer: filter for park type of the displayed information onchange
     function addParkTypesToDropdown(){
-            // Get the dropdown element by its ID
-
+        // Get the dropdown element by its ID
+        
         // Use forEach to iterate over the array
         parkTypesArray.forEach(function (types) {
             // Create a new option element
             let option = document.createElement("option");
-        
+            
             // Set the value and text content for the new option
             option.value = types;
             option.textContent = types;
-        
+            
             // Add the new option to the dropdown
             parkType.appendChild(option);
-            });
-
+        });
+        
         //*Display information based on the type of park chosen
 
         //*Add event listener to change display with chosen type
     }
-
-
-
-
-  
-//     // Perform an action based on the selected filter type and value
-//     if (parkFilter === "parkLocation") {
-//         console.log("Filtering by Park Location: " + filterValue);
+    
+    
+    
+    
+    
+    //     // Perform an action based on the selected filter type and value
+    //     if (parkFilter === "parkLocation") {
+        //         console.log("Filtering by Park Location: " + filterValue);
         
-
-//         // ! Add sort function here
-//     }
-//     else if (parkFilter === "parkType") {
-//       console.log("Filtering by Park Type: " + filterValue);
-//         // Modifying same code but filtered by type
-//         function searchType() {
-//             let message = `${nationalParksArray.length} National Parks to visit</h1><br><br>`;
         
+        //         // ! Add sort function here
+        //     }
+        //     else if (parkFilter === "parkType") {
+            //       console.log("Filtering by Park Type: " + filterValue);
+            //         // Modifying same code but filtered by type
+            //         function searchType() {
+                //             let message = `${nationalParksArray.length} National Parks to visit</h1><br><br>`;
+                
 //             message += nationalParksArray.map(parkTemplate).join("");
         
 //             document.getElementById("myParks").innerHTML = message;
