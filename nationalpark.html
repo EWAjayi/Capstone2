@@ -32,6 +32,12 @@
               font-size: 16px;
               cursor: pointer;
             }
+            #parkTypeButton {
+                display: none;
+            }
+            #parkType {
+                display: none;
+            }
           </style>
 </head>
 
@@ -60,9 +66,11 @@
         <select id="states"></select>
             <!-- dropdown menu for sorting by type of park -->
             <select id="parkType"></select>
-        
+
         <!-- button for JS execution -->
-        <button type="button" onclick="displayLocationInfo()">Search by location</button>
+        <button type="button" id="LocationButton" onclick="displayLocationInfo()">Search by location</button>
+        <button type="button" id="parkTypeButton" onclick="sortByParkType()">Search by Type</button>
+
         
         <br>
         <br>
