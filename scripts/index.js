@@ -44,25 +44,16 @@ window.onload = () => {
         });
     }
 
-//TODO create function for display after onclick
+//TODO create function for display after onclick "search by location"
     //*Display information based on the state chosen
         function displayLocationInfo() {
+            //define value by grabbing id
             let stateValue = document.getElementById("states").value
             console.log(stateValue);
-            // Filter the nationalParksArray based on the selectedLocation
+            // Filter the nationalParksArray based on the selected location
             let filteredParks = nationalParksArray.filter(function (park) {
                 return park.State === stateValue;
             });
-            
-            //Function to display additional options
-            function showTypeOptions() {
-                // Get the second button element
-                let parkType = document.getElementById("parkType");
-                let parkTypeButton = document.getElementById("parkTypeButton");
-                // Change the display style to block (show the button)
-                parkType.style.display = "inline";
-                parkTypeButton.style.display = "inline";
-            }
 
             // Display the filtered information
             let message = `${filteredParks.length} National Parks in ${stateValue}</h1><br><br>`;
@@ -70,9 +61,22 @@ window.onload = () => {
             addParkTypesToDropdown();
             showTypeOptions();
             document.getElementById("myParks").innerHTML = message;
+            
+            //Function to display additional options
+            function showTypeOptions() {
+                // Get the second dropdown element
+                let parkType = document.getElementById("parkType");
+                //Get the second button element
+                let parkTypeButton = document.getElementById("parkTypeButton");
+                // Change the display style to reveal them
+                parkType.style.display = "inline";
+                parkTypeButton.style.display = "inline";
+            }
 
-            // Allow list to be used in other functions
+            // Allow elements to be used in other functions
+            return parkType;
             return filteredParks;
+            return stateValue;
         }
 
     //* Template for location display output
@@ -88,28 +92,31 @@ window.onload = () => {
                 </div>`;
         }
     
-//TODO create second layer: filter park types
+//TODO create second layer: filter park types onclick "search by type"
     //Display information based on the park type chosen
     function sortByParkType() {
+        //define value by grabbing id
+        let typeValue = parkType.value;
+        let stateValue = document.getElementById("states").value
+        let parkType = document.getElementById("parkType").value;
 
-        let typeValue = document.getElementById("parkType").value
-        console.log(parkType);
+        let filteredParks = nationalParksArray.filter(function (park) {
+            return park.State === stateValue;
+        });
 
-        // Filter the parkType based on pulling from Name
-        function filterParkNames (typeValue) {
-            let filteredType = filteredParks.filter(function (park) {
-                return park.LocationName
-            });
-
-            return filteredType;
-        }
+        // Filter the parkType based on filtering from LocationName
+        let filteredType = filteredParks.filter(function (park) {
+            return park.LocationName === typeValue;
+        });
 
         // Display the filtered information
         let message = `There are ${filteredType.length} ${parkType}s in ${stateValue}</h1><br><br>`;
         message += filteredType.map(filteredParkTemplate).join("");
-        // addParkTypesToDropdown();
-        // showTypeOptions();
         document.getElementById("myParks").innerHTML = message;
+
+        //Allow elements to be used in other functions
+        return filteredType;
+
     }    
 
     //* Template for displaying filtered output
