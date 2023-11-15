@@ -8,7 +8,6 @@ window.onload = () => {
     // const mountains = document.getElementById("mountains");
 
     addLocationsToDropdown();
-    sortByParkType();
 };
 
 //! National Park section
@@ -56,7 +55,7 @@ window.onload = () => {
             });
 
             // Display the filtered information
-            let message = `${filteredParks.length} National Parks in ${stateValue}</h1><br><br>`;
+            let message = `There are ${filteredParks.length} Parks in ${stateValue}</h1><br><br>`;
             message += filteredParks.map(parkTemplate).join("");
             addParkTypesToDropdown();
             showTypeOptions();
@@ -71,12 +70,37 @@ window.onload = () => {
                 // Change the display style to reveal them
                 parkType.style.display = "inline";
                 parkTypeButton.style.display = "inline";
+
+                return parkType;
             }
 
-            // Allow elements to be used in other functions
-            return parkType;
-            return filteredParks;
-            return stateValue;
+            //TODO create second layer: filter park types using conditional
+            const submitButton = document.getElementById("parkTypeButton");
+            submitButton.addEventListener('click', sortByParkType);
+
+            function sortByParkType() {
+                //define value by grabbing id
+                let typeValue = parkType.value;
+                    console.log(typeValue);
+                let filteredParks = nationalParksArray.filter(function (park) {
+                    return park.State === stateValue;
+                });
+        
+                // Filter the parkType based on filtering from LocationName
+                let filteredType = filteredParks.filter(function (park) {
+                    return park.LocationName.includes(typeValue);
+                });
+        
+                // Display the filtered information
+                let message = `There are ${filteredType.length} ${typeValue}s in ${stateValue}</h1><br><br>`;
+                message += filteredType.map(parkTemplate).join("");
+                document.getElementById("myParks").innerHTML = message;
+        
+                //Allow elements to be used in other functions
+                return filteredType;
+        
+            } 
+
         }
 
     //* Template for location display output
@@ -91,45 +115,6 @@ window.onload = () => {
                     </div>
                 </div>`;
         }
-    
-//TODO create second layer: filter park types onclick "search by type"
-    //Display information based on the park type chosen
-    function sortByParkType() {
-        //define value by grabbing id
-        let typeValue = parkType.value;
-        let stateValue = document.getElementById("states").value
-        let parkType = document.getElementById("parkType").value;
 
-        let filteredParks = nationalParksArray.filter(function (park) {
-            return park.State === stateValue;
-        });
-
-        // Filter the parkType based on filtering from LocationName
-        let filteredType = filteredParks.filter(function (park) {
-            return park.LocationName === typeValue;
-        });
-
-        // Display the filtered information
-        let message = `There are ${filteredType.length} ${parkType}s in ${stateValue}</h1><br><br>`;
-        message += filteredType.map(filteredParkTemplate).join("");
-        document.getElementById("myParks").innerHTML = message;
-
-        //Allow elements to be used in other functions
-        return filteredType;
-
-    }    
-
-    //* Template for displaying filtered output
-    function filteredParkTemplate(park) {
-        return `
-            <div class="card" style="width: 18rem;">
-                <img src="${park.Image}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">${park.LocationName}</h5>
-                    <p class="card-text">${park.State}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>`;
-    }    
     
 
