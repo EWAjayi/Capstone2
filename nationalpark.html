@@ -14,46 +14,62 @@
         <link rel="stylesheet" href="css/style.css">
 
         <style>
-            body {
-              font-family: Arial, sans-serif;
-              padding: 20px;
-            }
-            label {
-              display: block;
-              margin-bottom: 8px;
-            }
-            select {
-              width: 200px;
-              padding: 8px;
-              font-size: 16px;
-            }
-            button {
-              padding: 8px 16px;
-              font-size: 16px;
-              cursor: pointer;
-            }
-            #parkTypeButton {
-                display: none;
-            }
-            #parkType {
-                display: none;
-            }
-          </style>
+          body {
+            background: linear-gradient(to top, rgba(242, 242, 242, 0) 1%, rgba(139.93, 171.94, 164.26, 0.48) 49%, #1e5661 100%),
+            url(images/forestBG.gif) no-repeat;
+            background-attachment: fixed; background-size: 100% 100%;
+            font-size: 35px;
+            font-family: Roboto;
+            color: #f2ffd7;
+          }
+          main{
+            min-height: 50vh;
+          }
+          footer{
+          background-color: #224e579e;
+          bottom: 0%;
+          width: 100%;
+          left: 0%;
+          }
+          label {
+            display: block;
+            margin-bottom: 8px;
+          }
+          select {
+            width: 200px;
+            padding: 8px;
+            font-size: 16px;
+          }
+          button {
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+          }
+          #parkTypeButton {
+            display: none;
+          }
+          #parkType {
+            display: none;
+          }
+          .card {
+            background-color: #CFCF91;
+            color: #362703;
+          }
+    </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav class="navbar navbar-expand-lg p-3 border-bottom border-dark" style="background: linear-gradient(180deg, #88af9fd3 0%, #285868 120%); font-weight: 700; font-size: 30px;">
             <div class="container-fluid">
-              <a class="navbar-brand" href="index.html">Enjoy The Outdoors</a>
+              <a class="navbar-brand" href="index.html" style="position: absolute; color: #012a38b8; font-size: 30px;">Enjoy The Outdoors</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-collapse collapse justify-content-center p-2 mx-auto" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link" href="index.html">Home</a>
-                  <a class="nav-link active" aria-current="page" href="nationalpark.html">National Parks</a>
-                  <a class="nav-link" href="mountains.html">Mountains</a>
+                  <a class="nav-link" href="nationalpark.html"><u>America's Parks</u> </a> 
+                  <a class="nav-link" href="mountains.html"><u>Mountains</u></a>
                   <a class="nav-link disabled">Contact Us</a>
                 </div>
               </div>
@@ -62,33 +78,80 @@
     </header>
 
     <main> 
-        <!-- dropdown menu for state selection -->
-        <select id="states"></select>
-            <!-- dropdown menu for sorting by type of park -->
-            <select id="parkType"></select>
-
-        <!-- button for JS execution -->
-        <button type="button" id="LocationButton" onclick="displayLocationInfo()">Search by location</button>
-        <button type="button" id="parkTypeButton">Search by Type</button>
-
-        
-        <br>
-        <br>
-        
-        <!-- Output for park information -->
-        <div id="myParks"></div>
-        
-        
-    </main>
+        <div class="container-fluid d-flex justify-content-center" style="margin-top: 5%; width: 100%;">
+          <div style="padding-inline: 20px;">
+            <!-- dropdown menu for state selection -->
+            <select id="states" style="font-size: 30px; background-color: #f1f1ccbe; min-width: 300px;"></select>
                 
-                <script src="scripts/locationData.js"></script>
-                <script src="scripts/parkTypeData.js"></script>
-            <script src="scripts/nationalParkData.js"></script>
-            <script src="scripts/nationalParks.js"></script>
-            <script src="scripts/index.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
-            </script>
+            <!-- dropdown menu for sorting by type of park -->
+            <select id="parkType" style="font-size: 30px; background-color: #f1f1ccbe; min-width: 300px;"></select>
+          </div>
+          <div style="padding-inline: 20px;">
+            <!-- button for JS execution -->
+            <button type="button" id="LocationButton" style="font-size: 25px; background-color: #cfcf91be;" onclick="displayLocationInfo()">Search by location</button>
+            <button type="button" id="parkTypeButton" style="font-size: 25px; background-color: #cfcf91be;">Search by Type</button>
+          </div>
+        </div>
+
+        <!-- Output for park information -->
+        <div class="container-fluid">
+          <div class="row row-cols-auto" style="margin-inline: auto; margin-bottom: 3%; padding-top: 2%;">
+            <div class="col">
+              <div class="d-flex flex-wrap justify-content-end align-items-center" id="myParks"></div>
+            </div>
+          </div>
+        </div>
+    </main>
+  
+    <footer>
+    <div class="row justify-content-center align-items-center" style="padding-top: 3%; font-size: 25px;">
+      <div class="col-3">
+          <h3 class="py-2" style="color: #CFCF91;"><em>About Our Foundation</em></h3>
+          <small style="color: #362703;">
+              <p>
+              A Park Foundation
+              <br>
+              555 Somewhere Street
+              <br>
+              USA, Earth 02023
+              </p>
+              
+              <p>
+              Phone: <a href="tel:(555) 555-5555">(555) 555-5555</a> 
+              <br>
+              Fax: <a href="tel:(888) 888-8888">(888) 888-8888</a>    
+              <br>                             
+              Email: <a href="mailto:example@foundation.org">example@foundation.org</a>
+              </p>
+          </small>
+      </div>
+
+      <div class="col-3 text-center">
+          <small">
+              <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">CONTACT US</a></li>
+                  <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">TERMS OF USE</a></li>
+                  <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">CAREERS</a></li>
+                  <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">ABOUT</a></li>
+                  <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">DONATE</a></li>
+              </ul>
+          </small>
+      </div>
+      
+    <div class="d-flex flex-column flex-sm-row justify-content-end px-4 my-4">
+      <p class="text-muted">&copy; 2023 My Website</p>
+    </div>
+      
+  </footer>
+  <script src="scripts/locationData.js"></script>
+  <script src="scripts/parkTypeData.js"></script>
+  <script src="scripts/nationalParkData.js"></script>
+  <script src="scripts/mountainData.js"></script>
+  <script src="scripts/mountains.js"></script>
+  <script src="scripts/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
 
 </body>
 

@@ -14,23 +14,37 @@
         <link rel="stylesheet" href="css/style.css">
 
     <style>
-
+        body {
+        background: linear-gradient(to top, rgba(242, 242, 242, 0) 1%, rgba(139.93, 171.94, 164.26, 0.48) 49%, #1e5661 100%),
+        url(images/forestBG.gif) no-repeat;
+        background-attachment: fixed; background-size: 100% 100%;
+        font-size: 25px;
+        font-family: Roboto;
+        }
+        main{
+            min-height: 50vh;
+          }
+        footer{
+        background-color: #224e579e;
+        bottom: 0%;
+        width: 100%;
+        left: 0%;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav id="navigation" class="navbar navbar-expand-lg p-3 border-bottom border-dark" style="background: linear-gradient(180deg, #88af9fd3 0%, #285868 120%); font-weight: 700; font-size: 30px;">
             <div class="container-fluid">
-              <a class="navbar-brand" href="index.html">Enjoy The Outdoors</a>
+              <a class="navbar-brand" href="index.html" style="position: absolute; color: #012a38b8; font-size: 30px;">Enjoy The Outdoors</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-collapse collapse justify-content-center p-2 mx-auto" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                  <a class="nav-link" href="nationalpark.html">National Parks</a>
-                  <a class="nav-link" href="mountains.html">Mountains</a>
+                  <a class="nav-link" href="nationalpark.html"><u>America's Parks</u> </a> 
+                  <a class="nav-link" href="mountains.html"><u>Mountains</u></a>
                   <a class="nav-link disabled">Contact Us</a>
                 </div>
               </div>
@@ -39,14 +53,127 @@
     </header>
     <main>
 
+        <section style="margin-top: 8%; margin-bottom: 5%;">
+            <div class="card d-flex p-4" style="width: 75%; background-image: linear-gradient(#c6d4d7, #FFFFFF); margin: auto;">
+                <div class="card-body d-flex justify-content-center" style="width: 100%; background: linear-gradient(180deg, rgba(242, 242, 242, 0) 1%, rgba(139.93, 171.94, 164.26, 0.48) 49%, #1E6151 100%)">
+                    
+                    <div class="d-flex flex-column justify-content-center">
+                        <!-- Title -->
+                        <h2 style="padding: 5%; color: #52730E; font-size: 64px; text-align: center;">America's Parks and Mountains</h2>
+                        <!-- Flavor text -->
+                        <p style="width: 75%; text-align: center; color: #6E581F; margin-inline: auto; padding-bottom: 2%;">
+                            Come adventure through the natural wonder this country provides from sea to shining sea.
+                            Allow your inner child to rediscover their whimsy.
+                        </p>
+
+                        <!-- carousel -->
+                        <div id="carouselScenePictures" class="carousel slide carousel-fade" style="width: 50%; margin: auto;">
+                            <div class="carousel-inner" style="border-radius: 10%;">
+                              <div class="carousel-item active">
+                                <div class="card text-bg-dark" style="border: none;">
+                                    <img src="images\Cannon-StoryImg_2.jpg" class="card-img-top d-block w-100" alt="...">
+                                    <div class="card-img-overlay">
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="card text-bg-dark" style="border: none;">
+                                    <img src="images\Carrigain-StoryImage_2.jpg" class="card-img-top d-block w-100" alt="...">
+                                    <div class="card-img-overlay">
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="card text-bg-dark" style="border: none;">
+                                    <img src="images/NKinsman-StoryImg_2.jpg" class="card-img-top d-block w-100" alt="...">
+                                    <div class="card-img-overlay">
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <div class="card text-bg-dark" style="border: none;">
+                                    <img src="images\WildcatD-StoryImg.jpg" class="card-img-top d-block w-100" alt="...">
+                                    <div class="card-img-overlay">
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselScenePictures" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselScenePictures" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+
+                        <!-- buttons -->
+                        <div class="btn-group gap-3" style="width: 100%; margin-top: 5%; justify-content: center; padding-bottom: 3%;">
+                            <button style="width: 30%; padding: 2%; background: #6E581F; border-radius: 8px; font-size: 25px;">
+                                <a href="nationalpark.html" style=" color: #CFCF91;">Visit the Parks</a>
+                            </button>
+                            <button style="width: 30%; padding: 2%; background: #6E581F; border-radius: 8px; font-size: 25px;">
+                                <a href="mountains.html" style=" color: #CFCF91;">Visit the Mountains</a>                                
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            
+        </section>
 
 
     </main>
-    <footer></footer>
+    <footer>
+        <div class="row justify-content-center align-items-center" style="padding-top: 3%;">
+          <div class="col-3">
+              <h3 class="py-2" style="color: #CFCF91;"><em>About Our Foundation</em></h3>
+              <small style="color: #362703;">
+                  <p>
+                  A Park Foundation
+                  <br>
+                  555 Somewhere Street
+                  <br>
+                  USA, Earth 02023
+                  </p>
+                  
+                  <p>
+                  Phone: <a href="tel:(555) 555-5555">(555) 555-5555</a> 
+                  <br>
+                  Fax: <a href="tel:(888) 888-8888">(888) 888-8888</a>    
+                  <br>                             
+                  Email: <a href="mailto:example@foundation.org">example@foundation.org</a>
+                  </p>
+              </small>
+          </div>
+    
+          <div class="col-3 text-center">
+              <small">
+                  <ul class="nav flex-column">
+                      <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">CONTACT US</a></li>
+                      <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">TERMS OF USE</a></li>
+                      <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">CAREERS</a></li>
+                      <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">ABOUT</a></li>
+                      <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">DONATE</a></li>
+                  </ul>
+              </small>
+          </div>
+          
+        <div class="d-flex flex-column flex-sm-row justify-content-end px-4 my-4">
+          <p class="text-muted">&copy; 2023 My Website</p>
+        </div>
+          
+      </footer>
+
     <script src="scripts/locationData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
     <script src="scripts/nationalParkData.js"></script>
-    <script src="scripts/nationalParks.js"></script>
+    <script src="scripts/mountainData.js"></script>
+    <script src="scripts/mountains.js"></script>
     <script src="scripts/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">

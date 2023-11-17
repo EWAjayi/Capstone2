@@ -13,54 +13,136 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
 
-    <style>
-
-    </style>
-</head>
-
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="index.html">Enjoy The Outdoors</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  <a class="nav-link" href="index.html">Home</a>
-                  <a class="nav-link" href="nationalpark.html">National Parks</a>
-                  <a class="nav-link active" aria-current="page"" href="mountains.html">Mountains</a>
-                  <a class="nav-link disabled">Contact Us</a>
+        <style>
+          body {
+          background: linear-gradient(to top, rgba(242, 242, 242, 0) 1%, rgba(139.93, 171.94, 164.26, 0.48) 49%, #1e5661 100%),
+          url(images/forestBG.gif) no-repeat;
+          background-attachment: fixed; background-size: 100% 100%;
+          font-size: 25px;
+          font-family: Roboto;
+          }
+          main{
+            min-height: 50vh;
+          }
+          footer{
+          background-color: #224e579e;
+          bottom: 0%;
+          width: 100%;
+          left: 0%;
+          }
+          h2{
+            font-size: 50px;
+          }
+          h4 {
+            font-size: 25px;
+          }
+          label {
+            display: block;
+            margin-bottom: 8px;
+          }
+          select {
+            width: 200px;
+            padding: 8px;
+            font-size: 16px;
+          }
+          button {
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+          }
+      </style>
+  </head>
+  
+  <body>
+      <header>
+          <nav class="navbar navbar-expand-lg p-3 border-bottom border-dark" style="background: linear-gradient(180deg, #88af9fd3 0%, #285868 120%); font-weight: 700; font-size: 30px;">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="index.html" style="position: absolute; color: #012a38b8; font-size: 30px;">Enjoy The Outdoors</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-center p-2 mx-auto" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-link" href="nationalpark.html"><u>America's Parks</u> </a> 
+                    <a class="nav-link" href="mountains.html"><u>Mountains</u></a>
+                    <a class="nav-link disabled">Contact Us</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </nav>
-    </header>
+            </nav>
+      </header>
 
     <main>
-        <!-- dropdown menu for mountain selection -->
-            <select id="mountains"></select>
-
+      <div class="container-fluid d-flex justify-content-center" style="margin-top: 5%; width: 100%;">
+        <div style="padding-inline: 20px;">
+          <!-- dropdown menu for mountain selection -->
+          <select id="mountains"style="font-size: 30px; background-color: #f1f1ccbe; min-width: 300px;"></select> 
+        </div>
+        <div style="padding-inline: 20px;">
         <!-- button for JS execution -->
-            <button type="button" id="mountainButton">Select Mountain</button>
+        <button type="button" id="mountainButton" style="font-size: 25px; background-color: #cfcf91be;">Select Mountain</button>
+        </div>
+      </div>
 
-        <div id="mountainOutput"></div>
-
+      <!-- Output for park information -->
+      <div class="container-fluid">
+        <div style="margin-inline: auto; margin-bottom: 3%; padding-top: 2%;">
+            <div class="d-flex justify-content-center align-items-center" id="mountainOutput"></div>
+        </div>
+      </div>
 
     </main>
+  
     <footer>
+      <div class="row justify-content-center align-items-center" style="padding-top: 3%;">
+        <div class="col-3">
+            <h3 class="py-2" style="color: #CFCF91;"><em>About Our Foundation</em></h3>
+            <small style="color: #362703;">
+                <p>
+                A Park Foundation
+                <br>
+                555 Somewhere Street
+                <br>
+                USA, Earth 02023
+                </p>
+                
+                <p>
+                Phone: <a href="tel:(555) 555-5555">(555) 555-5555</a> 
+                <br>
+                Fax: <a href="tel:(888) 888-8888">(888) 888-8888</a>    
+                <br>                             
+                Email: <a href="mailto:example@foundation.org">example@foundation.org</a>
+                </p>
+            </small>
+        </div>
+  
+        <div class="col-3 text-center">
+            <small">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">CONTACT US</a></li>
+                    <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">TERMS OF USE</a></li>
+                    <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">CAREERS</a></li>
+                    <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">ABOUT</a></li>
+                    <li class="nav-item mb-2"><a href="#" style="color: #8A763F;" class="nav-link p-0">DONATE</a></li>
+                </ul>
+            </small>
+        </div>
+        
+      <div class="d-flex flex-column flex-sm-row justify-content-end px-4 my-4">
+        <p class="text-muted">&copy; 2023 My Website</p>
+      </div>
+        
     </footer>
+      
     <script src="scripts/locationData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
-    <script src="scripts/mountainData.js"></script>
     <script src="scripts/nationalParkData.js"></script>
-    <script src="scripts/nationalParks.js"></script>
+    <script src="scripts/mountainData.js"></script>
     <script src="scripts/mountains.js"></script>
     <script src="scripts/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
-</body>
+  </body>
 
 </html>

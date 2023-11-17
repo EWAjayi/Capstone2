@@ -92,7 +92,7 @@ window.onload = () => {
                 });
         
                 // Display the filtered information
-                let message = `There are ${filteredType.length} ${typeValue}s in ${stateValue}</h1><br><br>`;
+                let message = `There are ${filteredType.length} ${typeValue}s in ${stateValue}</h1><br>`;
                 message += filteredType.map(parkTemplate).join("");
                 document.getElementById("myParks").innerHTML = message;
         
@@ -106,15 +106,20 @@ window.onload = () => {
     //* Template for location display output
         function parkTemplate(park) {
             return `
-                <div class="card" style="width: 18rem;">
-                    <img src="${park.Image}" class="card-img-top" alt="...">
+                <br>
+                <div class="card" style="width: 18rem; margin: 20px; min-height: 450px;">
+                    <img src="images/nice_tree.gif" class="card-img-top" alt="A nice Tree"  style= "max-width:97%; margin: auto; margin-top: 4px;">
                     <div class="card-body">
-                        <h5 class="card-title">${park.LocationName}</h5>
-                        <p class="card-text">${park.State}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <div>
+                            <h4 class="card-title text-center">${park.LocationName}</h4>
+                        </div>
+                        <div>
+                            <h5 class="card-subtitle text-center text-body-secondary py-2">A lovely place to visit while you're in ${park.City}!</h5>
+                            <h6><a href="#" class="card-link"> Visit their Local Website</a></h6>
+                        </div>
                     </div>
-                </div>`;
-        }
+                </div>
+        `;}
 
     
 
