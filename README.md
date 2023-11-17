@@ -10,13 +10,16 @@
 ## Screenshots
 
 Index
-![Screenshot 2023-11-17 070918](https://github.com/EWAjayi/Capstone2/assets/146771903/c1b98e78-e386-44d8-800f-fa98197fc553)
+![Screenshot 2023-11-17 070918](https://github.com/EWAjayi/Capstone2/assets/146771903/7755b100-3f8a-440b-9929-3365a1975d0b)
+
 
 Parks page
-![Screenshot 2023-11-17 071051](https://github.com/EWAjayi/Capstone2/assets/146771903/56a33a9d-3af0-4d53-8ac2-af75c294949f)
+![Screenshot 2023-11-17 071051](https://github.com/EWAjayi/Capstone2/assets/146771903/a2814a3c-0d36-49e7-a0de-fccbc6f48b15)
+
 
 Mountains page
-![Screenshot 2023-11-17 071228](https://github.com/EWAjayi/Capstone2/assets/146771903/9e55f3c9-abcb-4371-b638-fd735f12d8af)
+![Screenshot 2023-11-17 071228](https://github.com/EWAjayi/Capstone2/assets/146771903/0cafc827-1118-456f-a6c5-e8798c0cac24)
+
 
 Code Snippet of an interesting piece of Code
 ![Screenshot 2023-11-17 072438](https://github.com/EWAjayi/Capstone2/assets/146771903/ccdf9766-a928-481d-85a6-0c20ac42d226)
